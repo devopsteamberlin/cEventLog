@@ -1,0 +1,29 @@
+TOPIC
+    about_cEventLog
+
+SHORT DESCRIPTION
+    cEventLog is a DSCResource which allows you to change properties of a specified Event Log
+
+LONG DESCRIPTION
+    cEventLog is a DSCResource which allows you to change the MaximumSizeInBytes,IsEnabled,LogMode,SecurityDescriptor, and LogPath Properties of a specified Event Log
+
+EXAMPLES
+    Configuration cTestEventLog{
+
+    Import-DSCResource -Name cEventLog
+
+    node localhost{
+
+        cEventLog Test{
+
+            LogName = "Application"
+            LogPath = "E:\EventViewer"
+            LogMode = "Circular"
+            MaximumSizeinBytes = 4096MB
+
+        }
+    }
+}
+
+KEYWORDS
+	DSC,DSC Resource,cEventLog,EventLog
